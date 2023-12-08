@@ -3,25 +3,29 @@ using UnityEngine.UI;
 
 public class LightController : MonoBehaviour
 {
-    public Light directionalLight; // Reference to the Directional Light
-    public Button toggleButton; // Reference to the UI Button
+    // Referens till den riktade ljuskällan
+    public Light directionalLight;
+
+    // Referens till UI-knappen
+    public Button toggleButton;
 
     private void Start()
     {
-        // Ensure the references are set in the Inspector
+        // Se till att referenserna är inställda i Inspector-fönstret
         if (directionalLight == null || toggleButton == null)
         {
-            Debug.LogError("DirectionalLight or ToggleButton not assigned in the inspector!");
+            // Skriv ut ett felmeddelande om referenserna inte är inställda och avsluta metoden
+            Debug.LogError("DirectionalLight eller ToggleButton är inte tilldelad i Inspector-fönstret!");
             return;
         }
 
-        // Subscribe to the button's onClick event
+        // Prenumerera på knappens onClick-händelse
         toggleButton.onClick.AddListener(ToggleLight);
     }
 
+    // Metod för att växla ljusets tillstånd (på/av)
     private void ToggleLight()
     {
-        // Toggle the Directional Light's state (on/off)
         directionalLight.enabled = !directionalLight.enabled;
     }
 }

@@ -22,11 +22,11 @@ public class PauseMenu : MonoBehaviour
         {
             playButton.onClick.AddListener(OnPlayButtonClick);
         }
-        else
+        /**else
         {
             // Logga ett felmeddelande om play-knappen inte är tilldelad i Inspektorn
             Debug.LogError("Play-knappen är inte tilldelad. Vänligen tilldela play-knappen i Inspektorn.");
-        }
+        }**/
     }
 
     void Update()
